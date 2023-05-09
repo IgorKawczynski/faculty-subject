@@ -45,4 +45,14 @@ public class ItemEntity extends GlobalEntity implements Serializable {
         this.price = price;
         this.userId = userId;
     }
+
+    public ItemResponseDTO toItemResponseDTO() {
+        return ItemResponseDTO
+                .builder()
+                .itemName(this.itemName)
+                .description(this.description)
+                .price(this.price)
+                .build();
+
+    }
 }

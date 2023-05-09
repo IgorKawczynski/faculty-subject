@@ -12,14 +12,14 @@ import java.util.List;
  *
  */
 @RestController
-@RequestMapping("/item")
+@RequestMapping("/api/items")
 @RequiredArgsConstructor
 public class ItemController {
 
     private final ItemService itemService;
 
     @GetMapping("/all")
-    public List<ItemEntity> getItems() {
+    public List<ItemResponseDTO> getItems() {
         return itemService.getAllItems();
     }
 
@@ -39,5 +39,10 @@ public class ItemController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public String deleteItemById(@PathVariable Long id) {
         return itemService.deleteItem(id);
+    }
+
+    @GetMapping("/pomocy")
+    public String testRest() {
+        return "POMOCY";
     }
 }
