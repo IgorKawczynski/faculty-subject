@@ -4,12 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 
 @Service
 @RequiredArgsConstructor
-class UserCRUDService {
+class UserService {
 
     private final UserRepository userRepository;
 
@@ -17,16 +17,21 @@ class UserCRUDService {
         return userRepository.save(userCreate);
     }
 
-    public Optional<UserEntity> getUserById(Long userId) {
-        return userRepository.findById(userId);
+    public UserEntity getUserById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new NoSuchElementException("User with given id does not exist!"));
     }
 
     public String getUserFullNameById(Long userId) {
         return userRepository.findById(userId).get().getFullName();
     }
 
-    public List<UserEntity> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserResponseDTO> getAllUsers() {
+        return userRepository
+                .findAll()
+                .stream()
+                .map(UserEntity::toResponseDto)
+                .toList();
     }
 
     public void deleteUser(Long userId) {

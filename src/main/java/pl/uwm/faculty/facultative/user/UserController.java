@@ -13,35 +13,33 @@ import java.util.Optional;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserCRUDService userCRUDService;
+    private final UserService userService;
 
     @GetMapping("/{userId}")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Optional<UserEntity>> getUserById(@PathVariable Long userId) {
-        return ResponseEntity.of(Optional.ofNullable(userCRUDService.getUserById(userId)));
+    public UserResponseDTO getUserById(@PathVariable Long userId) {
+        return userService.getUserById(userId).toResponseDto();
     }
 
     @GetMapping("/fullname/{userId}")
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> getUserFullNameById(@PathVariable Long userId) {
-        return ResponseEntity.of(Optional.ofNullable(userCRUDService.getUserFullNameById(userId)));
+        return ResponseEntity.of(Optional.ofNullable(userService.getUserFullNameById(userId)));
     }
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public List<UserEntity> getAllUsers() {
-        return userCRUDService.getAllUsers();
+    public List<UserResponseDTO> getAllUsers() {
+        return userService.getAllUsers();
     }
 
     @PostMapping("/register")
     public UserEntity registerUser(@RequestBody UserEntity userCreate) {
-        return userCRUDService.createUser(userCreate);
+        return userService.createUser(userCreate);
     }
 
     @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUserById(@PathVariable Long userId) {
-        userCRUDService.deleteUser(userId);
+        userService.deleteUser(userId);
     }
 
 }

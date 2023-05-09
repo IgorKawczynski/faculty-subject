@@ -31,4 +31,12 @@ public class UserEntity extends GlobalEntity {
     public String getFullName() {
         return firstName + " " + lastName;
     }
+
+    public UserResponseDTO toResponseDto() {
+        return UserResponseDTO.builder()
+                .id(this.id)
+                .firstName(this.firstName)
+                .lastName(this.lastName)
+                .build();
+    }
 }

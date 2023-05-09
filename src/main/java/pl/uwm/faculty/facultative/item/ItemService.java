@@ -13,16 +13,22 @@ import java.util.NoSuchElementException;
 @Service
 @RequiredArgsConstructor
 class ItemService {
-
-    private final static Integer PAGESIZE = 5;
     private final ItemRepository itemRepository;
 
-    public List<ItemEntity> getAllItems(){
-        return itemRepository.findAll();
+    public List<ItemResponseDTO> getAllItems(){
+        return itemRepository
+                .findAll()
+                .stream()
+                .map(ItemEntity::toItemResponseDTO)
+                .toList();
     }
 
     public ItemEntity getItemById(Long id){
-        return itemRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Item with id: " + id + " does not exist!"));
+        return itemRepository
+                .findById(id)
+                .orElseThrow(
+                        () -> new NoSuchElementException("Item with id: " + id + " does not exist!")
+                );
     }
 
     public void addItem(ItemEntity item) {
@@ -33,7 +39,9 @@ class ItemService {
         var item =
                 itemRepository
                 .findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Item with id: " + id + " does not exist!"));
+                .orElseThrow(
+                        () -> new NoSuchElementException("Item with id: " + id + " does not exist!")
+                );
         itemRepository.delete(item);
         return "Item with id: " + id + " deleted successfully!";
     }
