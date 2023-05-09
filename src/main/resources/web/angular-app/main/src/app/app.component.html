@@ -1,7 +1,21 @@
 <section>
     <div class="button-row">
-      <button mat-raised-button color="primary" (click)="this.route('/users')">Users</button>
-      <button mat-raised-button color="accent" (click)="this.route('/items')" style="margin-left: 1rem">Items</button>
+      <button pButton pRipple
+              class="p-button-lg p-button-outlined p-button-success"
+              style="margin-left: 1rem;"
+              type="button"
+              (click)="route('/users')"
+              routerLinkActive="active"
+              label="Users">
+      </button>
+      <button pButton pRipple
+              class="p-button-lg p-button-outlined p-button-danger"
+              style="margin-left: 1rem;"
+              type="button"
+              (click)="route('/items')"
+              routerLinkActive="active"
+              label="Items">
+      </button>
     </div>
 </section>
 <router-outlet></router-outlet>

@@ -1,1 +1,23 @@
-<p>items works!</p>
+<div class="items-table">
+  <p-table [value]="items">
+    <ng-template pTemplate="caption">
+      <div class="center-caption">
+        List of items
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Item name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr>
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

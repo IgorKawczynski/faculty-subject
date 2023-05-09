@@ -9,30 +9,17 @@ import {ItemsService} from "./items.service";
 })
 export class ItemsComponent implements OnInit {
 
-  private items: ItemResponseDTO[] = [];
-  public x: string = "h";
+  public items: ItemResponseDTO[] = [];
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
     this.getAllItems();
-    let x = this.itemsService.pomocy();
-    console.log("items: ", this.items);
-    console.log("pomocy: ", x);
-    let x2 = this.pomocy();
-    console.log("pomocy@: ", x2);
   }
 
   public getAllItems(): void {
     this.itemsService.getAllItems().subscribe((response: any) =>{
       this.items = response;
     })
-  }
-
-  public pomocy(): string {
-    this.itemsService.pomocy().subscribe((response: any) =>{
-      this.x = response;
-    })
-    return this.x;
   }
 
 }

@@ -17,8 +17,4 @@ export class ItemsService {
     return this.http.get<ItemResponseDTO[]>(`${this.apiServerUrl}/api/items/all`)
   }
 
-  public pomocy() {
-    return this.http.get<string>(`${this.apiServerUrl}/api/items/pomocy`);
-  }
-
 }

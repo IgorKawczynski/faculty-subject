@@ -34,15 +34,10 @@ public class ItemController {
         itemService.addItem(item);
     }
 
-
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public String deleteItemById(@PathVariable Long id) {
         return itemService.deleteItem(id);
     }
 
-    @GetMapping("/pomocy")
-    public String testRest() {
-        return "POMOCY";
-    }
 }

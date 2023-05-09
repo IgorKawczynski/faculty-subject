@@ -23,7 +23,8 @@ import { TableModule } from 'primeng/table';
         HttpClientModule,
         RouterModule,
         BrowserAnimationsModule,
-      ButtonModule, TableModule
+        ButtonModule,
+        TableModule
 
     ],
   providers: [],
