@@ -1,0 +1,35 @@
+<div class="item-form">
+  <p>Add new item below</p>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon"></span>
+    <input pInputText [(ngModel)]="itemRequestDto.itemName" placeholder="Item name" />
+  </div>
+  <div class="p-inputgroup" style="margin-top: 1rem;">
+    <span class="p-inputgroup-addon"></span>
+    <input type="text" pInputText [(ngModel)]="itemRequestDto.description" placeholder="Description" />
+  </div>
+  <div class="p-inputgroup" style="margin-top: 1rem;">
+    <span class="p-inputgroup-addon">$</span>
+    <input type="text" pInputText [(ngModel)]="itemRequestDto.price" placeholder="Price" />
+    <span class="p-inputgroup-addon">.00</span>
+  </div>
+  <div class="p-inputgroup" style="margin-top: 1rem;">
+    <span class="p-inputgroup-addon"></span>
+    <input type="text" pInputText [(ngModel)]="itemRequestDto.userId" placeholder="User number" />
+    <span class="p-inputgroup-addon"></span>
+  </div>
+
+  <div class="button-row" style="margin-top: 1rem;">
+    <button pButton pRipple
+            class="p-button-lg p-button-outlined p-button-success"
+            style="margin-left: 1rem;"
+            type="button"
+            (click)="btnAddItem()"
+            routerLinkActive="active"
+            label="+ Add new item">
+    </button>
+  </div>
+
+</div>
+
+
