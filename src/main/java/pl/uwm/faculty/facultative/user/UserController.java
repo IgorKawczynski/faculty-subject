@@ -31,8 +31,9 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PostMapping("/register")
-    public UserEntity registerUser(@RequestBody UserEntity userCreate) {
+    @PostMapping(path = "", produces = "application/json", consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserEntity registerUser(@RequestBody UserRequestDTO userCreate) {
         return userService.createUser(userCreate);
     }
 
