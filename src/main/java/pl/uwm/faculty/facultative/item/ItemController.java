@@ -30,7 +30,7 @@ public class ItemController {
 
     @PostMapping(path = "", produces = "application/json", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addItem(@RequestBody ItemEntity item) {
+    public void addItem(@RequestBody ItemRequestDTO item) {
         itemService.addItem(item);
     }
 

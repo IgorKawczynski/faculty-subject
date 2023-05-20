@@ -53,6 +53,5 @@ public class ItemEntity extends GlobalEntity implements Serializable {
                 .description(this.description)
                 .price(this.price)
                 .build();
-
     }
 }
