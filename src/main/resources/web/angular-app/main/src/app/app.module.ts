@@ -9,13 +9,23 @@ import { HttpClientModule } from "@angular/common/http";
 import { ButtonModule } from "primeng/button"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
+import { UserAddFormComponent } from './user-add-form/user-add-form.component';
+import { ItemAddFormComponent } from './item-add-form/item-add-form.component';
+import { MessageService } from "primeng/api";
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ToastModule } from "primeng/toast";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    ItemsComponent
+    ItemsComponent,
+    UserAddFormComponent,
+    ItemAddFormComponent
   ],
     imports: [
         BrowserModule,
@@ -24,10 +34,15 @@ import { TableModule } from 'primeng/table';
         RouterModule,
         BrowserAnimationsModule,
         ButtonModule,
-        TableModule
-
+        TableModule,
+        InputTextModule,
+        CheckboxModule,
+        RadioButtonModule,
+        FormsModule,
+        ToastModule,
+        ReactiveFormsModule
     ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
