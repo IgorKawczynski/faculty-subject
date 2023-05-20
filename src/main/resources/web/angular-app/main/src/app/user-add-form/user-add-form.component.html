@@ -1,0 +1,34 @@
+<div class="user-form">
+  <p>Register yourself below</p>
+  <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-user"></i>
+      </span>
+    <input pInputText [(ngModel)]="userRequestDto.firstName" placeholder="First Name" />
+  </div>
+  <div class="p-inputgroup" style="margin-top: 1rem;">
+      <span class="p-inputgroup-addon">
+          <i class="pi pi-user"></i>
+      </span>
+    <input pInputText [(ngModel)]="userRequestDto.lastName" placeholder="Last Name" />
+  </div>
+  <div class="p-inputgroup" style="margin-top: 1rem;">
+    <span class="p-inputgroup-addon">#</span>
+    <input type="text" pInputText [(ngModel)]="userRequestDto.password" placeholder="Password" />
+  </div>
+
+  <div class="button-row" style="margin-top: 1rem;">
+    <button pButton pRipple
+            class="p-button-lg p-button-outlined p-button-success"
+            style="margin-left: 1rem;"
+            type="button"
+            (click)="btnRegister()"
+            routerLinkActive="active"
+            label="Register">
+    </button>
+  </div>
+
+</div>
+
+
+
