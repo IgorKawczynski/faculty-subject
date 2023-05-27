@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-interface ItemRepository extends JpaRepository<ItemEntity, Long> {
+public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
 
     ItemEntity findItemEntityById(Long id);
 

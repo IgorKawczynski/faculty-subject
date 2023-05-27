@@ -1,0 +1,35 @@
+<div class="opinion-form">
+    <p>Add new opinion below</p>
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"></span>
+        <textarea pInputTextarea [(ngModel)]="opinionRequestDto.opinion" placeholder="Your opinion"></textarea>
+      </div>
+      
+      <div class="p-inputgroup" style="margin-top: 1rem;">
+        <span class="p-inputgroup-addon"></span>
+        <input type="text" pInputText [(ngModel)]="opinionRequestDto.rate" placeholder="Rate item" pattern="[0-9]*" />
+      </div>
+      
+      <div class="p-inputgroup" style="margin-top: 1rem;">
+        <span class="p-inputgroup-addon"></span>
+        <input type="text" pInputText [(ngModel)]="opinionRequestDto.itemId" placeholder="Item id" pattern="[0-9]*" />
+      </div>
+      
+      <div class="p-inputgroup" style="margin-top: 1rem;">
+        <span class="p-inputgroup-addon"></span>
+        <input type="text" pInputText [(ngModel)]="opinionRequestDto.userId" placeholder="Your id" pattern="[0-9]*" />
+      </div>      
+      
+    <div class="button-row" style="margin-top: 1rem;">
+      <button pButton pRipple
+              class="p-button-lg p-button-outlined p-button-success"
+              style="margin-left: 1rem;"
+              type="button"
+              (click)="btnAddOpinion()"
+              routerLinkActive="active"
+              label="+ Add new opinion">
+      </button>
+    </div>
+  
+  </div>
+  

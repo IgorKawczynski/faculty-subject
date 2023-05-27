@@ -17,6 +17,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ToastModule } from "primeng/toast";
+import { OpinionsComponent } from './opinions/opinions.component';
+import { OpinionAddFormComponent } from './opinion-add-form/opinion-add-form.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ToastModule } from "primeng/toast";
     UsersComponent,
     ItemsComponent,
     UserAddFormComponent,
-    ItemAddFormComponent
+    ItemAddFormComponent,
+    OpinionsComponent,
+    OpinionAddFormComponent
   ],
     imports: [
         BrowserModule,

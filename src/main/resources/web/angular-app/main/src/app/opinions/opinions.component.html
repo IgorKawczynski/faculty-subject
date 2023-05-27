@@ -1,0 +1,34 @@
+<div class="opinions-table">
+    <p-table [value]="opinions">
+      <ng-template pTemplate="caption">
+        <div class="center-caption">
+          List of opinions
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Item name</th>
+          <th>Opinion</th>
+          <th>Rate</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-opinion>
+        <tr>
+          <td>{{ opinion.itemName }}</td>
+          <td>{{ opinion.opinion }}</td>
+          <td>{{ opinion.rate }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  
+  <div class="button-row">
+    <button pButton pRipple
+            class="p-button-lg p-button-outlined p-button-success"
+            style="margin-left: 1rem;"
+            type="button"
+            (click)="route('opinions/new')"
+            routerLinkActive="active"
+            label="Add opinion">
+    </button>
+  </div>
